@@ -23,7 +23,7 @@ func run() error {
 
 	mux := runtime.NewServeMux()
 	opts := []grpc.DialOption{grpc.WithInsecure()}
-	err := gw.RegisterAboutHandlerFromEndpoint(ctx, mux, *grpcServer, opts)
+	err := gw.RegisterAboutServiceHandlerFromEndpoint(ctx, mux, *grpcServer, opts)
 	if err != nil {
 		return err
 	}

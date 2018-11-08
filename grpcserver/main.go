@@ -16,7 +16,7 @@ func main() {
 	var opts []grpc.ServerOption
 	s := grpc.NewServer(opts...)
 	srv := &server{}
-	aboutv1pb.RegisterAboutServer(s, srv)
+	aboutv1pb.RegisterAboutServiceServer(s, srv)
 
 	lis, err := net.Listen("tcp", fmt.Sprintf("localhost:%d", 9901))
 	if err != nil {
